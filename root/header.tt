@@ -1,0 +1,8 @@
+<html>
+<head>
+	<title>SmellaTorrent</title>
+	<link type="text/css" rel="stylesheet" href="[% c.req.base %]static/css/main.css" />
+</head>
+<body>
+<div id="container">
+<h1><img src="[% c.req.base %]static/images/title-smellatorrent.png" alt="SmellaTorrent" /></h1>

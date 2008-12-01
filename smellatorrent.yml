@@ -1,0 +1,6 @@
+---
+name: SmellaTorrent
+authentication:
+    users:
+        smellatorrent:
+            password: "smella"

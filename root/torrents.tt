@@ -1,0 +1,68 @@
+<table id="torrents" cellspacing="0" cellpadding="0">
+<thead>
+	<tr>
+		<td style="width:300px">Torrent Name</td>
+		<td style="text-align:right">Controls</td>
+		<td style="text-align:right"><img src="[% c.req.base %]static/images/go-up.png" "Upload rate"  title="Upload rate" /></td>
+		<td style="text-align:right"><img src="[% c.req.base %]static/images/go-down.png" "Download rate" title="Download rate" /></td>
+		<td style="text-align:right"><accr title="Megabytes">MB</abbr></td>
+		<td style="width:100px;text-align:center">Percent</td>
+		<td style="text-align:center">Ratio</td>
+	</tr>
+</thead>
+[% FOR torrent IN status %]
+[% percent = ( torrent.completed / torrent.size) * 100 %]
+	<tr>
+		
+		<td style="width:300px;font-size:0.8em;">[% torrent.name %]</td>
+
+		<td style="border-right:1px solid #ccc;text-align:right">[% IF torrent.active %]
+			<a href="stop?id=[% torrent.id %]"><img src="[% c.req.base %]static/images/media-playback-pause.png" alt="pause" title="Pause this download" /></a>
+			[% ELSE %]
+			<a href="start?id=[% torrent.id %]"><img src="[% c.req.base %]static/images/media-playback-start.png" alt="resume" title="Resume this download" /></a>
+			[% END %]
+			<a href="erase?id=[% torrent.id %]"><img src="[% c.req.base %]static/images/list-remove.png" alt="Permanently stop this download" title="Permanently stop this download" /></a>
+		</td>
+
+		<td style="font-size:0.9em;font-family:monospace;text-align:right;border-right:1px solid #ccc">
+			[% IF torrent.up_rate > 0 %]
+			[% torrent.up_rate / 1000 FILTER format("%0.1f") %]
+			[% ELSE %]&nbsp;[% END %]
+		</td>
+
+		<td style="font-size:0.9em;font-family:monospace;text-align:right;border-right:1px solid #ccc">
+			[% IF torrent.down_rate > 0 %]
+			[% torrent.down_rate / 1000 FILTER format("%0.1f") %]
+			[% ELSE %]&nbsp;[% END %]
+		</td>
+
+		<td style="font-size:0.9em;font-family:monospace;text-align:right">
+			[% torrent.size_formatted %]
+		</td>
+
+		<td style="padding:0 0.4em;width:100px;">
+			<div style="position:relative;height:1em;border:1px solid #ccc">
+				<div class="percent">
+					[% percent FILTER format("%d") %]<span style="color:#5e91a6;font-size:0.8em">%</span>
+				</div>
+				<div class="progress" style="width:[% percent %]px"></div>
+			</div>
+		</td>
+
+		<td style="font-size:0.9em;font-family:monospace;">
+			[% IF torrent.ratio < 0.25 %]
+				[% ratiocolor = "#f3c0c0" %]
+			[% ELSIF torrent.ratio < 0.50 %]
+				[% ratiocolor = "#efdaba" %]
+			[% ELSIF torrent.ratio < 0.75 %]
+				[% ratiocolor = "#efecba" %]
+			[% ELSE %]
+				[% ratiocolor = "#c7efba" %]
+			[% END %]
+			<div class="ratiobox" style="background:[% ratiocolor %]" title="[% torrent.ratio %]"></div>
+		</td>
+
+
+	</tr>
+[% END %]
+</table>

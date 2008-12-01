@@ -1,0 +1,5 @@
+[% INCLUDE header.tt %]
+[% INCLUDE views.tt %]
+[% INCLUDE overview.tt %]
+[% INCLUDE torrents.tt %]
+[% INCLUDE footer.tt %]

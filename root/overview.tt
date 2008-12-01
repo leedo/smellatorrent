@@ -1,0 +1,13 @@
+<dl id="overview">
+	<dt>Upload Rate</dt>
+	<dd>[% total.up_rate / 1000 FILTER format("%0.1f") %]</dd>
+
+	<dt>Download Rate</dt>
+	<dd>[% total.down_rate / 1000 FILTER format("%0.1f") %]</dd>
+	
+	<dt>Universal Controls</dt>
+	<dd style="background:#eee;border-bottom:1px solid #ccc">
+		<a href="[% c.req.base %]stopall"><img src="[% c.req.base %]static/images/media-playback-pause.png" alt="pause" title="Pause all downloads" /></a>
+		<a href="[% c.req.base %]startall"><img src="[% c.req.base %]static/images/media-playback-start.png" alt="start" title="Start all downloads" /></a>
+	</dd>
+</dl>

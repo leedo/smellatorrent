@@ -1,0 +1,10 @@
+<ul id="views">
+	<li[% IF view == "main" %] class="active"[% END %]><a href="[% c.req.base %]main">Main</a></li>
+	<li[% IF view == "name" %] class="active"[% END %]><a href="[% c.req.base %]name">Name</a></li>
+	<li[% IF view == "started" %] class="active"[% END %]><a href="[% c.req.base %]started">Started</a></li>
+	<li[% IF view == "stopped" %] class="active"[% END %]><a href="[% c.req.base %]stopped">Stopped</a></li>
+	<li[% IF view == "complete" %] class="active"[% END %]><a href="[% c.req.base %]complete">Complete</a></li>
+	<li[% IF view == "incomplete" %] class="active"[% END %]><a href="[% c.req.base %]incomplete">Incomplete</a></li>
+	<li[% IF view == "hashing" %] class="active"[% END %]><a href="[% c.req.base %]hashing">Hashing</a></li>
+	<li[% IF view == "seeding" %] class="active"[% END %]><a href="[% c.req.base %]seeding">Seeding</a></li>
+</ul>

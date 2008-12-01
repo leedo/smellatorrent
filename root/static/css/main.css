@@ -1,0 +1,106 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+a img {
+	border: none;
+}
+h1 {
+	border-bottom: 1px solid #fa3f3c;
+	margin-top: 0;
+}
+div#container {
+	width: 800px;
+	margin: 15px auto;
+	position: relative;
+}
+table#torrents {
+	width: 800px;
+	font-size: 0.85em;
+	float: left;
+}
+table#torrents td {
+	border-bottom: 1px solid #ccc;
+	height: 1em;
+	padding: 0.4em;
+}
+div.progress {
+	background: #c2ecfe;
+	height: 1em;
+}
+div.percent {
+	position: absolute;
+	right: 65px;
+	top: 1px;
+	color: #306880;
+	font-size: 0.9em;
+	text-align: right;
+	font-family: monospace;
+}
+table#torrents thead td {
+	vertical-align: bottom;
+	font-size:0.8em;
+	color: #999;
+	padding-top: 15px;
+}
+div.ratiobox {
+	width: 1.2em;
+	height: 1.2em;
+	margin: 0 auto;
+}
+ul#views {
+	height: 1.65em;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+	width: 800px;
+	font-size: 0.85em;
+}
+ul#views li {
+	float: left;
+}
+ul#views a {
+	border: 1px solid #ccc;
+	border-bottom: none;
+	display: block;
+	height: 1.2em;
+	padding: 0.2em;
+	margin: 0 0.5em 0 0;
+	text-decoration: none;
+	background: #ccc;
+	color: #fff;
+}
+ul#views li a:hover {
+	background: #999;
+}
+ul#views li.active a:hover {
+	background: #fff;
+}
+ul#views li.active a {
+	background: #fff;
+	color: #666;
+}
+dl#overview {
+	font-size: 0.75em;
+	margin: 10px 0 0 0;
+	float: left;
+}
+
+dl#overview dt, dl#overview dd {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+dl#overview dd {
+	font-weight: bold;
+	margin-left: 4px;
+	margin-right: 15px;
+}
+
+dl#overview dd img {
+	display:block;
+	float: left;
+	margin: 0 2px;
+}
